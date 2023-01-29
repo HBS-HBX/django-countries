@@ -284,6 +284,7 @@ class CountryField(CharField):
                 kwargs["max_length"] = max(
                     len(code) for code in self.countries.countries
                 )
+        self.db_collation = False
         super().__init__(*args, **kwargs)
 
     def check(self, **kwargs):
