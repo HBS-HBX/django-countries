@@ -284,7 +284,7 @@ class CountryField(CharField):
                 kwargs["max_length"] = max(
                     len(code) for code in self.countries.countries
                 )
-        super(CharField, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def check(self, **kwargs):
         errors = super().check(**kwargs)
